@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>部落格｜Helen Chen SEO 顧問</title>
+  <meta name="description" content="分享 SEO 實戰案例、策略思維與產業觀察。從醫療、食品到教育，用真實數據說故事。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1714;
+      --paper: #f5f0e8;
+      --cream: #ede7d9;
+      --accent: #c85a2a;
+      --accent-light: #e8896a;
+      --muted: #7a6e62;
+      --border: #d4cbbf;
+      --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: var(--white); padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--ink); }
+
+    /* HEADER */
+    .blog-header {
+      padding: 9rem 5% 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+    .blog-tag::before { content: '//'; opacity: 0.5; }
+    .blog-header h1 { font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 0.8rem; }
+    .blog-header p { font-size: 1rem; color: var(--muted); max-width: 500px; line-height: 1.7; }
+
+    /* FILTERS */
+    .blog-filters {
+      padding: 1.5rem 5%;
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+    }
+    .filter-btn {
+      padding: 0.35rem 0.9rem; border-radius: 2px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em;
+      border: 1.5px solid var(--border); background: transparent;
+      color: var(--muted); cursor: pointer; transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+
+    /* ARTICLES GRID */
+    .blog-grid {
+      padding: 3rem 5%;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+
+    /* ARTICLE CARD */
+    .article-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .article-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.09); }
+    .card-top {
+      padding: 1.8rem 1.8rem 0;
+      position: relative;
+    }
+    .card-top::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent);
+    }
+    .card-meta { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .card-industry {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .card-date { font-size: 0.75rem; color: var(--muted); }
+    .card-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem; font-weight: 700; line-height: 1.4;
+      margin-bottom: 0.8rem;
+    }
+    .card-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.7; padding: 0 1.8rem 1.5rem; flex: 1; }
+    .card-footer {
+      padding: 1rem 1.8rem;
+      border-top: 1px solid var(--cream);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .card-result {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--accent);
+    }
+    .card-result-label { font-size: 0.72rem; color: var(--muted); }
+    .card-read { font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
+
+    /* EMPTY STATE */
+    .coming-soon {
+      grid-column: 1 / -1;
+      text-align: center; padding: 5rem 2rem;
+      color: var(--muted);
+    }
+    .coming-soon-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+    .coming-soon h3 { font-family: 'Noto Serif TC', serif; font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--ink); }
+    .coming-soon p { font-size: 0.9rem; line-height: 1.7; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); color: rgba(245,240,232,0.5);
+      padding: 2rem 5%; display: flex;
+      align-items: center; justify-content: space-between;
+      font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 4rem;
+    }
+    .footer-logo { font-family: 'Noto Serif TC', serif; font-weight: 700; color: var(--paper); font-size: 1rem; }
+
+    @media (max-width: 960px) {
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Helen Chen</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">關於我</a></li>
+    <li><a href="index.html#cases">案例</a></li>
+    <li><a href="index.html#services">服務</a></li>
+    <li><a href="blog.html" class="active">部落格</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#contact">聯絡我</a>
+</nav>
+
+<div class="blog-header">
+  <div class="blog-tag">部落格</div>
+  <h1>SEO 實戰觀察與案例分享</h1>
+  <p>不只說理論，用真實數據與產業案例，分享讓品牌被找到的 SEO 思維。</p>
+</div>
+
+<div class="blog-filters">
+  <button class="filter-btn active">全部</button>
+  <button class="filter-btn">SEO 策略</button>
+  <button class="filter-btn">案例分享</button>
+  <button class="filter-btn">技術優化</button>
+  <button class="filter-btn">內容行銷</button>
+  <button class="filter-btn">數據分析</button>
+</div>
+
+<div class="blog-grid">
+
+  <!-- ▼▼▼ 文章卡片範例（之後複製這段新增）▼▼▼ -->
+  <a class="article-card" href="seo-case-study-01.html">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="card-industry">案例分享</span>
+        <span class="card-date">2025.01.15</span>
+      </div>
+      <div class="card-title">醫療品牌網站改版後，我怎麼讓索引頁從 30 頁變成 741 頁</div>
+    </div>
+    <div class="card-excerpt">接手這個專案時，網站有個隱藏的渲染問題導致 Google 根本看不到內容。從診斷問題到全站技術優化，記錄這段過程與每個決策背後的思路。</div>
+    <div class="card-footer">
+      <div>
+        <div class="card-result">24×</div>
+        <div class="card-result-label">網頁索引成長</div>
+      </div>
+      <span class="card-read">閱讀文章 →</span>
+    </div>
+  </a>
+  <!-- ▲▲▲ 文章卡片範例結束 ▲▲▲ -->
+
+  <!-- 還沒有更多文章時顯示 -->
+  <div class="coming-soon">
+    <div class="coming-soon-icon">✍️</div>
+    <h3>更多文章撰寫中</h3>
+    <p>持續分享 SEO 實戰觀察，<br/>歡迎定期回來看看。</p>
+  </div>
+
+</div>
+
+<footer>
+  <a class="footer-logo" href="index.html">Helen Chen</a>
+  <div>© 2025 陳宜妏 Helen Chen ｜ SEO 資深行銷顧問</div>
+</footer>
+
+<script>
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
