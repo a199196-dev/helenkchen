@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>高單價醬油品牌怎麼做 SEO？3個月自然流量成長51%的實戰紀錄｜Helen Chen</title>
+  <meta name="description" content="一罐醬油賣全聯的5倍價，怎麼用SEO找到願意買單的受眾？從品牌定位推敲關鍵字策略，到每月帶來自然轉換，完整記錄豆油伯SEO操作思路。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1714;
+      --paper: #f5f0e8;
+      --cream: #ede7d9;
+      --accent: #c85a2a;
+      --accent-light: #e8896a;
+      --muted: #7a6e62;
+      --border: #d4cbbf;
+      --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: var(--white); padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--ink); }
+
+    .article-wrapper { max-width: 740px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+
+    .article-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .article-back:hover { color: var(--accent); }
+
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .article-industry { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; background: rgba(200,90,42,0.08); padding: 0.25rem 0.6rem; border-radius: 2px; }
+    .article-date { font-size: 0.8rem; color: var(--muted); }
+    .article-readtime { font-size: 0.8rem; color: var(--muted); }
+
+    h1.article-title { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem; }
+
+    .article-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.8; border-left: 3px solid var(--accent); padding-left: 1.2rem; margin-bottom: 2.5rem; }
+
+    .result-box { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2rem 2.5rem; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .result-item { text-align: center; }
+    .result-num { font-family: 'Noto Serif TC', serif; font-size: 2rem; font-weight: 700; color: var(--accent-light); display: block; margin-bottom: 0.3rem; }
+    .result-label { font-size: 0.78rem; color: rgba(245,240,232,0.6); line-height: 1.4; }
+    .result-box-title { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: rgba(245,240,232,0.4); letter-spacing: 0.1em; text-transform: uppercase; grid-column: 1 / -1; margin-bottom: 0.5rem; }
+
+    .article-body { line-height: 1.85; }
+    .article-body h2 { font-family: 'Noto Serif TC', serif; font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.05rem; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--ink); }
+    .article-body p { margin-bottom: 1.2rem; font-size: 0.97rem; color: #2e2925; line-height: 1.85; }
+    .article-body strong { font-weight: 700; color: var(--ink); }
+
+    .callout { background: var(--cream); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.7; }
+    .callout-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .before-box, .after-box { border-radius: 4px; padding: 1.2rem 1.5rem; }
+    .before-box { background: rgba(0,0,0,0.04); border: 1px solid var(--border); }
+    .after-box { background: rgba(200,90,42,0.06); border: 1px solid rgba(200,90,42,0.2); }
+    .box-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .before-box .box-label { color: var(--muted); }
+    .after-box .box-label { color: var(--accent); }
+    .box-content { font-size: 0.88rem; line-height: 1.6; color: var(--ink); }
+
+    .keyword-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 1.5rem 0; }
+    .keyword-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1rem 1.2rem; }
+    .keyword-word { font-family: 'Noto Serif TC', serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+    .keyword-intent { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .keyword-rank { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); margin-top: 0.4rem; font-weight: 600; }
+
+    .insight-box { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 1.8rem 2rem; margin: 2rem 0; }
+    .insight-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .insight-box p { color: rgba(245,240,232,0.8); font-size: 0.92rem; line-height: 1.75; margin: 0; }
+
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    .article-cta { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+    .article-cta h3 { font-family: 'Noto Serif TC', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .article-cta p { font-size: 0.88rem; color: rgba(245,240,232,0.6); margin-bottom: 1.5rem; line-height: 1.7; }
+    .cta-btn { background: var(--accent); color: var(--white); padding: 0.85rem 2rem; border-radius: 2px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .cta-btn:hover { background: var(--accent-light); }
+
+    footer { background: var(--ink); color: rgba(245,240,232,0.5); padding: 2rem 5%; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; }
+    .footer-logo { font-family: 'Noto Serif TC', serif; font-weight: 700; color: var(--paper); font-size: 1rem; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .result-box { grid-template-columns: 1fr 1fr; }
+      .before-after { grid-template-columns: 1fr; }
+      .keyword-grid { grid-template-columns: 1fr; }
+      .article-wrapper { padding: 7rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Helen Chen</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">關於我</a></li>
+    <li><a href="index.html#cases">案例</a></li>
+    <li><a href="index.html#services">服務</a></li>
+    <li><a href="blog.html">部落格</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#contact">聯絡我</a>
+</nav>
+
+<article class="article-wrapper">
+
+  <a class="article-back" href="blog.html">← 回部落格</a>
+
+  <div class="article-meta">
+    <span class="article-industry">案例分享</span>
+    <span class="article-date">2025.03.01</span>
+    <span class="article-readtime">閱讀時間約 6 分鐘</span>
+  </div>
+
+  <h1 class="article-title">
+    一罐醬油賣全聯的 5 倍價，怎麼用 SEO 找到願意買單的人？
+  </h1>
+
+  <p class="article-intro">
+    豆油伯是台灣在地純釀造醬油品牌，產品品質沒話說，但消費者搜尋「醬油」找到的永遠是超市特價品。這篇記錄我怎麼從品牌定位出發，用 SEO 幫他們找到對的受眾，3 個月讓自然流量成長 51%，核心關鍵字攻上搜尋首頁第 1 名。
+  </p>
+
+  <div class="result-box">
+    <div class="result-box-title">專案關鍵成效</div>
+    <div class="result-item">
+      <span class="result-num">+51%</span>
+      <span class="result-label">3個月自然流量成長</span>
+    </div>
+    <div class="result-item">
+      <span class="result-num">#1</span>
+      <span class="result-label">核心關鍵字搜尋首頁排名</span>
+    </div>
+    <div class="result-item">
+      <span class="result-num">1~3筆</span>
+      <span class="result-label">每月自然流量帶來轉換</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <h2>先搞清楚：這個品牌在賣什麼？</h2>
+    <p>
+      接到這個案子，我做的第一件事不是打開關鍵字工具，而是把豆油伯的品牌介紹和所有產品頁仔細讀了一遍。
+    </p>
+    <p>
+      豆油伯的醬油，一罐要價幾乎是全聯同類商品的 5 倍。如果用「醬油推薦」「醬油哪個好」這種關鍵字去搶排名，吸引來的受眾大多是在比價的人，點進來看到價格，馬上就跳出去了。<strong>流量再高，也是白費。</strong>
+    </p>
+
+    <div class="callout">
+      <div class="callout-label">核心問題</div>
+      高單價品牌的 SEO 挑戰不是「讓更多人找到你」，而是「讓對的人找到你」。錯的流量不只沒用，還會拉低網站整體表現。
+    </div>
+
+    <p>
+      讀完品牌資料之後，我找到了幾個豆油伯真正的差別化：非基因改造原料、在地農產契作、傳統純釀造工法、無添加防腐劑。這些特點指向一群特定的消費者 — <strong>願意為健康、為產地、為工藝付出更高價格的人</strong>。
+    </p>
+
+    <h2>策略：從受眾心理反推關鍵字</h2>
+    <p>
+      確認了目標受眾之後，我開始思考：這群人在搜尋什麼？他們不會直接搜「豆油伯」（因為還不認識這個品牌），但他們可能在搜尋：
+    </p>
+
+    <div class="keyword-grid">
+      <div class="keyword-card">
+        <div class="keyword-word">生抽老抽</div>
+        <div class="keyword-intent">搜尋意圖：想了解醬油種類差異，有學習心態，對品質有要求</div>
+        <div class="keyword-rank">→ 最終排名：搜尋首頁 #1</div>
+      </div>
+      <div class="keyword-card">
+        <div class="keyword-word">全聯醬油推薦</div>
+        <div class="keyword-intent">搜尋意圖：正在選購醬油，願意參考推薦，有比較需求</div>
+        <div class="keyword-rank">→ 最終排名：搜尋首頁 #4</div>
+      </div>
+      <div class="keyword-card">
+        <div class="keyword-word">非基改醬油</div>
+        <div class="keyword-intent">搜尋意圖：有健康意識，主動篩選食材成分</div>
+        <div class="keyword-rank">→ 精準受眾，轉換率高</div>
+      </div>
+      <div class="keyword-card">
+        <div class="keyword-word">純釀造醬油推薦</div>
+        <div class="keyword-intent">搜尋意圖：已知道純釀造的價值，在找具體品牌</div>
+        <div class="keyword-rank">→ 購買意圖明確</div>
+      </div>
+    </div>
+
+    <p>
+      這幾個關鍵字有一個共同點：<strong>搜尋的人已經有一定的品質意識</strong>，不是純粹在比價。這樣的受眾進站之後，才有機會被豆油伯的品牌故事說服。
+    </p>
+
+    <h2>執行：用品牌語氣寫，不是用 SEO 語氣寫</h2>
+    <p>
+      策略定好之後，最難的部分來了 — 寫文章。
+    </p>
+    <p>
+      那個時代的 AI 寫作工具還很陽春（ChatGPT 3.0 的文章語氣硬得像說明書），豆油伯這種有溫度的在地品牌，完全不能用那種風格。我選擇自己寫，每一篇都從品牌的角度出發：講台灣農地、講老師傅的釀造工法、講為什麼不加防腐劑。
+    </p>
+
+    <div class="insight-box">
+      <div class="insight-label">寫作思路</div>
+      <p>SEO 文章不是把關鍵字塞進去就好。對高單價品牌來說，文章要做的事是「讓讀者覺得這個價格值得」。每一篇文章都在回答一個問題：為什麼豆油伯比超市貴這麼多，還是值得買？</p>
+    </div>
+
+    <p>
+      內容方向大致分三類：
+    </p>
+    <p>
+      第一類是<strong>知識型文章</strong>，像「生抽和老抽的差別」「純釀造和化學醬油怎麼分辨」，這類文章搜尋量大，幫品牌建立專業形象，同時自然帶入豆油伯的產品。
+    </p>
+    <p>
+      第二類是<strong>選購型文章</strong>，像「推薦幾款值得買的台灣醬油」，鎖定正在做購買決策的受眾，把豆油伯放在推薦清單裡，強調差別化優勢。
+    </p>
+    <p>
+      第三類是<strong>品牌故事型文章</strong>，講契作農田、講釀造過程，幫消費者理解「為什麼貴」，建立情感連結。
+    </p>
+
+    <h2>成效：流量進來了，而且是對的流量</h2>
+    <p>
+      執行大約 3 個月後，自然流量成長了 51%。但我覺得更有意義的數字是另一個：<strong>每個月開始有 1～3 筆來自自然搜尋的實際購買</strong>。
+    </p>
+
+    <div class="before-after">
+      <div class="before-box">
+        <div class="box-label">執行前</div>
+        <div class="box-content">自然流量幾乎沒有帶來轉換，訪客看完就離開</div>
+      </div>
+      <div class="after-box">
+        <div class="box-label">執行後</div>
+        <div class="box-content">每月穩定出現 1～3 筆自然流量轉換，且客單價高（高單價商品）</div>
+      </div>
+    </div>
+
+    <p>
+      對一個客單價這麼高的品牌來說，1 筆自然轉換的價值遠超過幾十個普通流量。這也驗證了策略方向是對的 — 與其追求大量流量，不如把精準的人帶進來。
+    </p>
+
+    <div class="callout">
+      <div class="callout-label">這個案子的核心學習</div>
+      高單價品牌做 SEO，關鍵字策略要從「品牌定位」出發，而不是從「搜尋量」出發。找到跟品牌價值觀一致的受眾，才是 SEO 真正能發揮的地方。
+    </div>
+
+    <hr class="article-divider" />
+
+    <p style="font-size:0.85rem;color:var(--muted);">
+      你的品牌也有類似的挑戰嗎？產品好，但流量帶來的都是錯的人？歡迎聊聊，一起找出適合你的 SEO 策略方向。
+    </p>
+
+  </div>
+
+  <div class="article-cta">
+    <h3>想讓對的人找到你的品牌？</h3>
+    <p>不只帶流量，而是帶來真正有購買意願的受眾。<br/>歡迎預約免費諮詢，一起討論你的品牌 SEO 策略。</p>
+    <a class="cta-btn" href="index.html#contact">預約免費諮詢</a>
+  </div>
+
+</article>
+
+<footer>
+  <a class="footer-logo" href="index.html">Helen Chen</a>
+  <div>© 2025 陳宜妏 Helen Chen ｜ SEO 資深行銷顧問</div>
+</footer>
+
+</body>
+</html>
