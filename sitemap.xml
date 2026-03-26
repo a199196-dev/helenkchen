@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 首頁 -->
+  <url>
+    <loc>https://a199196-dev.github.io/helenkchen/</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 部落格列表 -->
+  <url>
+    <loc>https://a199196-dev.github.io/helenkchen/blog.html</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 案例文章：醫療技術SEO -->
+  <url>
+    <loc>https://a199196-dev.github.io/helenkchen/seo-technical-website.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 案例文章：豆油伯 -->
+  <url>
+    <loc>https://a199196-dev.github.io/helenkchen/seo-case-doubanjo.html</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 案例文章：泰國國際SEO -->
+  <url>
+    <loc>https://a199196-dev.github.io/helenkchen/seo-case-thailand.html</loc>
+    <lastmod>2025-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
