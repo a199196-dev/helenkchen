@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- ✏️ 改這裡：文章標題 -->
-  <title>【文章標題】｜Helen Chen SEO 顧問</title>
-  <!-- ✏️ 改這裡：文章摘要（120字以內，給Google看） -->
-  <meta name="description" content="文章摘要放這裡" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NHMLJPRX');</script>
+  <!-- End Google Tag Manager -->
+  <title>醫療品牌網站改版後，我怎麼讓索引頁從 30 頁變成 741 頁｜Helen Chen SEO 顧問</title>
+  <meta name="description" content="醫療網站改版後流量沒起來？原來是JavaScript渲染問題導致Google看不到內容。記錄技術性SEO優化的五個步驟，讓網頁索引數從30頁成長到741頁的實戰過程。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet" />
@@ -25,7 +30,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -40,151 +44,58 @@
     .nav-cta { background: var(--accent); color: var(--white); padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
     .nav-cta:hover { background: var(--ink); }
 
-    /* ARTICLE LAYOUT */
-    .article-wrapper {
-      max-width: 740px; margin: 0 auto;
-      padding: 8rem 2rem 5rem;
-    }
-
-    /* HEADER */
-    .article-back {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-size: 0.8rem; color: var(--muted); text-decoration: none;
-      margin-bottom: 2.5rem; transition: color 0.2s;
-    }
+    .article-wrapper { max-width: 740px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+    .article-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
     .article-back:hover { color: var(--accent); }
     .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
-    .article-industry {
-      font-family: 'DM Mono', monospace; font-size: 0.7rem;
-      color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
-      background: rgba(200,90,42,0.08); padding: 0.25rem 0.6rem; border-radius: 2px;
-    }
+    .article-industry { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; background: rgba(200,90,42,0.08); padding: 0.25rem 0.6rem; border-radius: 2px; }
     .article-date { font-size: 0.8rem; color: var(--muted); }
     .article-readtime { font-size: 0.8rem; color: var(--muted); }
-    h1.article-title {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700; line-height: 1.3;
-      margin-bottom: 1.5rem;
-    }
-    .article-intro {
-      font-size: 1.05rem; color: var(--muted); line-height: 1.8;
-      border-left: 3px solid var(--accent); padding-left: 1.2rem;
-      margin-bottom: 2.5rem;
-    }
+    h1.article-title { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem; }
+    .article-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.8; border-left: 3px solid var(--accent); padding-left: 1.2rem; margin-bottom: 2.5rem; }
 
-    /* RESULT BOX */
-    .result-box {
-      background: var(--ink); color: var(--paper);
-      border-radius: 4px; padding: 2rem 2.5rem;
-      margin-bottom: 3rem;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
+    .result-box { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2rem 2.5rem; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .result-item { text-align: center; }
-    .result-num {
-      font-family: 'Noto Serif TC', serif;
-      font-size: 2rem; font-weight: 700; color: var(--accent-light);
-      display: block; margin-bottom: 0.3rem;
-    }
+    .result-num { font-family: 'Noto Serif TC', serif; font-size: 2rem; font-weight: 700; color: var(--accent-light); display: block; margin-bottom: 0.3rem; }
     .result-label { font-size: 0.78rem; color: rgba(245,240,232,0.6); line-height: 1.4; }
-    .result-box-title {
-      font-family: 'DM Mono', monospace; font-size: 0.7rem;
-      color: rgba(245,240,232,0.4); letter-spacing: 0.1em; text-transform: uppercase;
-      grid-column: 1 / -1; margin-bottom: 0.5rem;
-    }
+    .result-box-title { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: rgba(245,240,232,0.4); letter-spacing: 0.1em; text-transform: uppercase; grid-column: 1 / -1; margin-bottom: 0.5rem; }
 
-    /* ARTICLE BODY */
     .article-body { line-height: 1.85; }
-    .article-body h2 {
-      font-family: 'Noto Serif TC', serif;
-      font-size: 1.4rem; font-weight: 700;
-      margin: 2.5rem 0 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .article-body h3 {
-      font-size: 1.05rem; font-weight: 700;
-      margin: 2rem 0 0.7rem; color: var(--ink);
-    }
+    .article-body h2 { font-family: 'Noto Serif TC', serif; font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .article-body h3 { font-size: 1.05rem; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--ink); }
     .article-body p { margin-bottom: 1.2rem; font-size: 0.97rem; color: #2e2925; }
     .article-body strong { font-weight: 700; color: var(--ink); }
     .article-body em { font-style: italic; color: var(--accent); }
 
-    /* CALLOUT BOX */
-    .callout {
-      background: var(--cream); border-left: 3px solid var(--accent);
-      border-radius: 0 4px 4px 0; padding: 1.2rem 1.5rem;
-      margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.7;
-    }
-    .callout-label {
-      font-family: 'DM Mono', monospace; font-size: 0.68rem;
-      color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
+    .callout { background: var(--cream); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.7; }
+    .callout-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
 
-    /* BEFORE AFTER */
-    .before-after {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .before-box, .after-box {
-      border-radius: 4px; padding: 1.2rem 1.5rem;
-    }
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .before-box, .after-box { border-radius: 4px; padding: 1.2rem 1.5rem; }
     .before-box { background: rgba(0,0,0,0.04); border: 1px solid var(--border); }
     .after-box { background: rgba(200,90,42,0.06); border: 1px solid rgba(200,90,42,0.2); }
-    .box-label {
-      font-family: 'DM Mono', monospace; font-size: 0.68rem;
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;
-    }
+    .box-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
     .before-box .box-label { color: var(--muted); }
     .after-box .box-label { color: var(--accent); }
     .box-content { font-size: 0.88rem; line-height: 1.6; color: var(--ink); }
 
-    /* STEP LIST */
     .step-list { margin: 1.5rem 0; counter-reset: steps; }
-    .step-item {
-      display: flex; gap: 1rem; align-items: flex-start;
-      padding: 1rem 0; border-bottom: 1px dashed var(--border);
-      counter-increment: steps;
-    }
+    .step-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px dashed var(--border); counter-increment: steps; }
     .step-item:last-child { border-bottom: none; }
-    .step-num {
-      font-family: 'DM Mono', monospace; font-size: 0.8rem;
-      color: var(--accent); font-weight: 700; min-width: 28px; padding-top: 0.1rem;
-    }
+    .step-num { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--accent); font-weight: 700; min-width: 28px; padding-top: 0.1rem; }
     .step-num::before { content: counter(steps, decimal-leading-zero); }
     .step-content h4 { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
     .step-content p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; margin: 0; }
 
-    /* DIVIDER */
-    .article-divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
-    /* CTA */
-    .article-cta {
-      background: var(--ink); color: var(--paper);
-      border-radius: 4px; padding: 2.5rem;
-      text-align: center; margin-top: 3rem;
-    }
+    .article-cta { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
     .article-cta h3 { font-family: 'Noto Serif TC', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
     .article-cta p { font-size: 0.88rem; color: rgba(245,240,232,0.6); margin-bottom: 1.5rem; line-height: 1.7; }
-    .cta-btn {
-      background: var(--accent); color: var(--white);
-      padding: 0.85rem 2rem; border-radius: 2px;
-      font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em;
-      text-decoration: none; display: inline-block; transition: background 0.2s;
-    }
+    .cta-btn { background: var(--accent); color: var(--white); padding: 0.85rem 2rem; border-radius: 2px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-decoration: none; display: inline-block; transition: background 0.2s; }
     .cta-btn:hover { background: var(--accent-light); }
 
-    /* FOOTER */
-    footer {
-      background: var(--ink); color: rgba(245,240,232,0.5);
-      padding: 2rem 5%; display: flex;
-      align-items: center; justify-content: space-between;
-      font-size: 0.8rem;
-    }
+    footer { background: var(--ink); color: rgba(245,240,232,0.5); padding: 2rem 5%; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; }
     .footer-logo { font-family: 'Noto Serif TC', serif; font-weight: 700; color: var(--paper); font-size: 1rem; text-decoration: none; }
 
     @media (max-width: 600px) {
@@ -196,6 +107,10 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHMLJPRX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav>
   <a class="nav-logo" href="index.html">Helen Chen</a>
@@ -212,7 +127,6 @@
 
   <a class="article-back" href="blog.html">← 回部落格</a>
 
-  <!-- ✏️ 改這裡：分類、日期、標題、前言 -->
   <div class="article-meta">
     <span class="article-industry">案例分享</span>
     <span class="article-date">2025.01.15</span>
@@ -227,7 +141,6 @@
     接手這個案子的時候，網站看起來沒什麼問題，但 Google Search Console 的數字說的是另一回事。這篇想記錄從找出問題到看到成效，中間每一個決策的思路。
   </p>
 
-  <!-- ✏️ 改這裡：成效數字 -->
   <div class="result-box">
     <div class="result-box-title">專案關鍵成效</div>
     <div class="result-item">
@@ -244,7 +157,6 @@
     </div>
   </div>
 
-  <!-- ✏️ 以下是文章內容，照這個格式寫就對了 -->
   <div class="article-body">
 
     <h2>背景：網站改版後，流量為什麼沒有起來？</h2>
@@ -333,7 +245,6 @@
     </p>
 
   </div>
-  <!-- 文章內容結束 -->
 
   <div class="article-cta">
     <h3>你的網站也有被找到嗎？</h3>
