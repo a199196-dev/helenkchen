@@ -878,38 +878,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="contact-right fade-in" style="transition-delay:0.15s">
-      <div class="form-group">
-        <label>您的姓名</label>
-        <input type="text" placeholder="王小明" />
-      </div>
-      <div class="form-row">
+      <form id="contact-form" action="https://formspree.io/f/mdaplnge" method="POST">
         <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="yourname@company.com" />
+          <label>您的姓名</label>
+          <input type="text" name="姓名" placeholder="王小明" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="Email" placeholder="yourname@company.com" required />
+          </div>
+          <div class="form-group">
+            <label>聯絡電話</label>
+            <input type="tel" name="聯絡電話" placeholder="0912-345-678" />
+          </div>
         </div>
         <div class="form-group">
-          <label>聯絡電話</label>
-          <input type="tel" placeholder="0912-345-678" />
+          <label>服務需求</label>
+          <select name="服務需求">
+            <option value="">請選擇</option>
+            <option>關鍵字策略規劃</option>
+            <option>SEO 內容文案</option>
+            <option>技術性 SEO 健檢</option>
+            <option>數據分析報告</option>
+            <option>SEO 顧問諮詢</option>
+            <option>整合行銷加值</option>
+            <option>其他（請說明）</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>服務需求</label>
-        <select>
-          <option value="">請選擇</option>
-          <option>關鍵字策略規劃</option>
-          <option>SEO 內容文案</option>
-          <option>技術性 SEO 健檢</option>
-          <option>數據分析報告</option>
-          <option>SEO 顧問諮詢</option>
-          <option>整合行銷加值</option>
-          <option>其他（請說明）</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>訊息內容</label>
-        <textarea placeholder="簡單描述您的品牌、產業與目前遇到的 SEO 挑戰…"></textarea>
-      </div>
-      <button class="form-submit">送出諮詢</button>
+        <div class="form-group">
+          <label>訊息內容</label>
+          <textarea name="訊息內容" placeholder="簡單描述您的品牌、產業與目前遇到的 SEO 挑戰…"></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">送出諮詢</button>
+        <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:rgba(200,90,42,0.08);border:1px solid rgba(200,90,42,0.2);border-radius:4px;font-size:0.88rem;color:var(--accent);text-align:center;">
+          ✓ 已收到您的訊息！Helen 將在 1-2 個工作天內回覆您。
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -959,9 +964,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.body.style.overflow = '';
     });
   });
-  document.querySelector('.form-submit').addEventListener('click', () => {
-    alert('感謝您的聯絡！Helen 將在 1-2 個工作天內回覆您。');
-  });
+  // Formspree 表單送出
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = '送出中...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          document.getElementById('form-success').style.display = 'block';
+          btn.style.display = 'none';
+        } else {
+          btn.textContent = '送出失敗，請直接來信聯絡';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = '送出失敗，請直接來信聯絡';
+        btn.disabled = false;
+      }
+    });
+  }
 </script>
 </body>
 </html>
